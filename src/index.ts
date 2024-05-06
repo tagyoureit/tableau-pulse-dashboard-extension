@@ -109,7 +109,7 @@ app.put("/data", async (request, response) => {
             typeof settingsBody.siteName === 'undefined' ||
             typeof settingsBody.tableauUrl === 'undefined' ||
             typeof settingsBody.userName === 'undefined'
-        ) throw new Error(`Settings have not been successfully passed to the server.`);
+        ) throw new Error(`Configure the extension to load pulse metrics.`);
 
         settings.tableauUrl = settingsBody.tableauUrl; // Tableau Cloud url. For example: "https://10ax.online.tableau.com"
         settings.siteName = settingsBody.siteName; // Tableau Cloud Site Name. For example: "mySite"
@@ -138,9 +138,9 @@ app.put("/data", async (request, response) => {
         let detailInsights = await apiInsightsDetail(token, definitionsArray, metricsArray);
 
         response.status(200).json({ definitionsArray, metricsArray, insights, detailInsights }); // Shorthand for object property assignment
-    } catch (error) {
+    } catch (error: any) {
         console.error('Error:', error);
-        response.status(500).json({ error: 'An error occurred while fetching data from the API.' });
+        response.status(500).json({ error: error.message });
     }
 });
 
