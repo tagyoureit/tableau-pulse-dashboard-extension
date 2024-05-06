@@ -60,18 +60,7 @@ app.use((request, response, next) => {
     next();
 });
 
-// Create HTTPS server
-const privateKey = fs.readFileSync(path.resolve('./sslcert/server.key'), 'utf8'); // Path to your private key
-const certificate = fs.readFileSync(path.resolve('./sslcert/server.crt'), 'utf8'); // Path to your SSL certificate
-const credentials = { key: privateKey, cert: certificate };
 
-const httpsServer = https.createServer(credentials, app);
-
-// Start HTTPS server
-const PORT = process.env.PORT || 443;
-httpsServer.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
 async function apiAuth() {
     // first check to see if a token already exists
 
@@ -137,7 +126,7 @@ app.put("/data", async (request, response) => {
             console.log(settings.caSecretId === caSecretId);
             console.log(settings.caSecretValue === caSecretValue);
             settings.caSecretValue = settingsBody.caSecretValue; // Connected App Secret Value
-        } 
+        }
 
         // await getApiAuth()
         let [token, userId] = await apiAuth();
@@ -164,12 +153,37 @@ function errorHandling(err: any, req: any, res: any, next: any) {
 }
 
 app.use(errorHandling);
-app.set("port", process.env.PORT || 3000);
+// Define your routes and middleware here
 
-app.listen(app.get("port"), () => {
-    console.log("Server listening on port", app.get("port"))
+const PORT = process.env.PORT || 3000;
+
+// Start the server
+if (process.env.NODE_ENV === 'production') {
+    // Heroku provides SSL certificate through process.env
+    const sslKey = process.env.SSL_KEY;
+    const sslCert = process.env.SSL_CERT;
+
+    if (!sslKey || !sslCert) {
+        console.error('SSL key or certificate not provided by Heroku.');
+        process.exit(1);
+    }
+
+    const credentials = {
+        key: sslKey,
+        cert: sslCert
+    };
+
+    const httpsServer = https.createServer(credentials, app);
+
+    httpsServer.listen(PORT, () => {
+        console.log(`Server is running on port ${PORT}`);
+    });
+} else {
+    // In development, run without SSL
+    app.listen(PORT, () => {
+        console.log(`Server is running on port ${PORT}`);
+    });
 }
-);
 
 function base64url(source: any) {
     let encodedSource = CryptoJS.enc.Base64.stringify(source);
