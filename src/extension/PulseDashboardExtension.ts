@@ -162,7 +162,7 @@ let loading = 0;  // increment every time we start a load; decrement when done. 
     statusMessage.innerHTML = `Loading Pulse Metric(s)...`;
     // Send the PUT request
     try {
-      const myApiResponse = await fetch("http://localhost:3000/data", requestOptions);
+      const myApiResponse = await fetch(`${window.location.origin}\data`, requestOptions);
       parsedResponse = await myApiResponse.json();
       if (myApiResponse.ok) {
         // PUT request was successful
