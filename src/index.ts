@@ -158,32 +158,33 @@ app.use(errorHandling);
 const PORT = process.env.PORT || 3000;
 
 // Start the server
-if (process.env.NODE_ENV === 'production') {
-    // Heroku provides SSL certificate through process.env
-    const sslKey = process.env.SSL_KEY;
-    const sslCert = process.env.SSL_CERT;
+// Heroku terminates HTTPS at the router; the app only sees HTTP connections
+// if (process.env.NODE_ENV === 'production') {
+//     // Heroku provides SSL certificate through process.env
+//     const sslKey = process.env.SSL_KEY;
+//     const sslCert = process.env.SSL_CERT;
 
-    if (!sslKey || !sslCert) {
-        console.error('SSL key or certificate not provided by Heroku.');
-        process.exit(1);
-    }
+//     if (!sslKey || !sslCert) {
+//         console.error('SSL key or certificate not provided by Heroku.');
+//         process.exit(1);
+//     }
 
-    const credentials = {
-        key: sslKey,
-        cert: sslCert
-    };
+//     const credentials = {
+//         key: sslKey,
+//         cert: sslCert
+//     };
 
-    const httpsServer = https.createServer(credentials, app);
+//     const httpsServer = https.createServer(credentials, app);
 
-    httpsServer.listen(PORT, () => {
-        console.log(`Server is running on port ${PORT}`);
-    });
-} else {
-    // In development, run without SSL
-    app.listen(PORT, () => {
-        console.log(`Server is running on port ${PORT}`);
-    });
-}
+//     httpsServer.listen(PORT, () => {
+//         console.log(`Server is running on port ${PORT}`);
+//     });
+// } else {
+// In development, run without SSL
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
+// }
 
 function base64url(source: any) {
     let encodedSource = CryptoJS.enc.Base64.stringify(source);
