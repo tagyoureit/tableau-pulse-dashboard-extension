@@ -1,0 +1,1399 @@
+/*! ../../../ApiShared */
+
+/*! ../../../ExternalContract/Namespaces/Tableau */
+
+/*! ../../ApiShared */
+
+/*! ../../ApiShared/ApiVersion */
+
+/*! ../../DataSource */
+
+/*! ../../EnumMappings/ExternalToInternalEnumMappings */
+
+/*! ../../EnumMappings/InternalToExternalEnumMappings */
+
+/*! ../../ExternalContract/Namespaces/Tableau */
+
+/*! ../../Field */
+
+/*! ../../Impl/DataSourceImpl */
+
+/*! ../../Impl/FieldImpl */
+
+/*! ../../Impl/ParameterImpl */
+
+/*! ../../JsApiInternalContract */
+
+/*! ../../Models/FilterModels */
+
+/*! ../../Models/GetDataModels */
+
+/*! ../../Models/SelectionModels */
+
+/*! ../../Parameter */
+
+/*! ../../TableauError */
+
+/*! ../../Utils/DataValueFactory */
+
+/*! ../../Utils/EnumConverter */
+
+/*! ../../Utils/ErrorHelpers */
+
+/*! ../../Utils/Param */
+
+/*! ../../VersionedExternalApiDispatcher */
+
+/*! ../../internals/entry-unbind */
+
+/*! ../../internals/path */
+
+/*! ../../modules/es.array.find */
+
+/*! ../../modules/es.map */
+
+/*! ../../modules/es.number.is-integer */
+
+/*! ../../modules/es.number.is-nan */
+
+/*! ../../modules/es.number.parse-float */
+
+/*! ../../modules/es.number.parse-int */
+
+/*! ../../modules/es.object.assign */
+
+/*! ../../modules/es.object.entries */
+
+/*! ../../modules/es.object.set-prototype-of */
+
+/*! ../../modules/es.object.to-string */
+
+/*! ../../modules/es.promise */
+
+/*! ../../modules/es.promise.all-settled */
+
+/*! ../../modules/es.promise.finally */
+
+/*! ../../modules/es.string.iterator */
+
+/*! ../../modules/web.dom-collections.iterator */
+
+/*! ../ConnectionSummary */
+
+/*! ../DashboardObject */
+
+/*! ../DataSource */
+
+/*! ../EnumMappings/InternalToExternalEnumMappings */
+
+/*! ../Events/FilterChangedEvent */
+
+/*! ../Events/MarksSelectedEvent */
+
+/*! ../Events/ParameterChangedEvent */
+
+/*! ../ExternalContract/Namespaces/Tableau */
+
+/*! ../Field */
+
+/*! ../GetDataService */
+
+/*! ../JsApiInternalContract */
+
+/*! ../LogicalTable */
+
+/*! ../Models/GetDataModels */
+
+/*! ../Namespaces/DashboardContent */
+
+/*! ../Namespaces/Environment */
+
+/*! ../Namespaces/Settings */
+
+/*! ../Namespaces/UI */
+
+/*! ../Point */
+
+/*! ../Services/GetDataService */
+
+/*! ../Services/RegisterAllExtensionsServices */
+
+/*! ../Services/ServiceRegistry */
+
+/*! ../Size */
+
+/*! ../TableSummary */
+
+/*! ../TableauError */
+
+/*! ../Utils/DataValueFactory */
+
+/*! ../Utils/EnumConverter */
+
+/*! ../Utils/ErrorHelpers */
+
+/*! ../Utils/Param */
+
+/*! ../VersionConverterFactory */
+
+/*! ../Worksheet */
+
+/*! ../contract/Notifications */
+
+/*! ../internals/a-function */
+
+/*! ../internals/a-possible-prototype */
+
+/*! ../internals/add-to-unscopables */
+
+/*! ../internals/an-instance */
+
+/*! ../internals/an-object */
+
+/*! ../internals/array-includes */
+
+/*! ../internals/array-iteration */
+
+/*! ../internals/array-method-uses-to-length */
+
+/*! ../internals/array-species-create */
+
+/*! ../internals/call-with-safe-iteration-closing */
+
+/*! ../internals/check-correctness-of-iteration */
+
+/*! ../internals/classof */
+
+/*! ../internals/classof-raw */
+
+/*! ../internals/collection */
+
+/*! ../internals/collection-strong */
+
+/*! ../internals/copy-constructor-properties */
+
+/*! ../internals/correct-prototype-getter */
+
+/*! ../internals/create-iterator-constructor */
+
+/*! ../internals/create-non-enumerable-property */
+
+/*! ../internals/create-property-descriptor */
+
+/*! ../internals/define-iterator */
+
+/*! ../internals/descriptors */
+
+/*! ../internals/document-create-element */
+
+/*! ../internals/dom-iterables */
+
+/*! ../internals/engine-is-ios */
+
+/*! ../internals/engine-user-agent */
+
+/*! ../internals/engine-v8-version */
+
+/*! ../internals/enum-bug-keys */
+
+/*! ../internals/export */
+
+/*! ../internals/fails */
+
+/*! ../internals/freezing */
+
+/*! ../internals/function-bind-context */
+
+/*! ../internals/get-built-in */
+
+/*! ../internals/get-iterator-method */
+
+/*! ../internals/global */
+
+/*! ../internals/has */
+
+/*! ../internals/hidden-keys */
+
+/*! ../internals/host-report-errors */
+
+/*! ../internals/html */
+
+/*! ../internals/ie8-dom-define */
+
+/*! ../internals/indexed-object */
+
+/*! ../internals/inherit-if-required */
+
+/*! ../internals/inspect-source */
+
+/*! ../internals/internal-metadata */
+
+/*! ../internals/internal-state */
+
+/*! ../internals/is-array */
+
+/*! ../internals/is-array-iterator-method */
+
+/*! ../internals/is-forced */
+
+/*! ../internals/is-integer */
+
+/*! ../internals/is-object */
+
+/*! ../internals/is-pure */
+
+/*! ../internals/iterate */
+
+/*! ../internals/iterators */
+
+/*! ../internals/iterators-core */
+
+/*! ../internals/microtask */
+
+/*! ../internals/native-promise-constructor */
+
+/*! ../internals/native-symbol */
+
+/*! ../internals/native-weak-map */
+
+/*! ../internals/new-promise-capability */
+
+/*! ../internals/number-parse-float */
+
+/*! ../internals/number-parse-int */
+
+/*! ../internals/object-assign */
+
+/*! ../internals/object-create */
+
+/*! ../internals/object-define-properties */
+
+/*! ../internals/object-define-property */
+
+/*! ../internals/object-get-own-property-descriptor */
+
+/*! ../internals/object-get-own-property-names */
+
+/*! ../internals/object-get-own-property-symbols */
+
+/*! ../internals/object-get-prototype-of */
+
+/*! ../internals/object-keys */
+
+/*! ../internals/object-keys-internal */
+
+/*! ../internals/object-property-is-enumerable */
+
+/*! ../internals/object-set-prototype-of */
+
+/*! ../internals/object-to-array */
+
+/*! ../internals/object-to-string */
+
+/*! ../internals/own-keys */
+
+/*! ../internals/path */
+
+/*! ../internals/perform */
+
+/*! ../internals/promise-resolve */
+
+/*! ../internals/redefine */
+
+/*! ../internals/redefine-all */
+
+/*! ../internals/require-object-coercible */
+
+/*! ../internals/set-global */
+
+/*! ../internals/set-species */
+
+/*! ../internals/set-to-string-tag */
+
+/*! ../internals/shared */
+
+/*! ../internals/shared-key */
+
+/*! ../internals/shared-store */
+
+/*! ../internals/species-constructor */
+
+/*! ../internals/string-multibyte */
+
+/*! ../internals/string-trim */
+
+/*! ../internals/task */
+
+/*! ../internals/to-absolute-index */
+
+/*! ../internals/to-indexed-object */
+
+/*! ../internals/to-integer */
+
+/*! ../internals/to-length */
+
+/*! ../internals/to-object */
+
+/*! ../internals/to-primitive */
+
+/*! ../internals/to-string-tag-support */
+
+/*! ../internals/uid */
+
+/*! ../internals/use-symbol-as-uid */
+
+/*! ../internals/well-known-symbol */
+
+/*! ../internals/whitespaces */
+
+/*! ../modules/es.array.iterator */
+
+/*! ../package.json */
+
+/*! ./../../webpack/buildin/global.js */
+
+/*! ./ApiShared */
+
+/*! ./ApiShared/ApiVersion */
+
+/*! ./ApiShared/CrossFrame/CrossFrameBootstrap */
+
+/*! ./ApiShared/Dashboard */
+
+/*! ./ApiShared/EnumMappings/InternalToExternalEnumMappings */
+
+/*! ./ApiShared/EventListenerManager */
+
+/*! ./ApiShared/Events/TableauEvent */
+
+/*! ./ApiShared/Impl/DashboardImpl */
+
+/*! ./ApiShared/Impl/SingleEventManagerImpl */
+
+/*! ./ApiShared/Services/RegisterAllSharedServices */
+
+/*! ./ApiShared/Services/ServiceRegistry */
+
+/*! ./ApiShared/Services/impl/ServiceImplBase */
+
+/*! ./ApiShared/TableauError */
+
+/*! ./ApiShared/Utils/ErrorHelpers */
+
+/*! ./CrossFrameDispatcher */
+
+/*! ./CrossFramePreparedMessage */
+
+/*! ./DataSourceImpl */
+
+/*! ./Enums */
+
+/*! ./ErrorHelpers */
+
+/*! ./EventListenerManager */
+
+/*! ./ExtensionsApi/Impl/ExtensionsImpl */
+
+/*! ./ExtensionsApi/Namespaces/Extensions */
+
+/*! ./ExternalContract/Namespaces/Tableau */
+
+/*! ./ExternalIdentityVersionConverter */
+
+/*! ./ExternalStackingVersionConverter */
+
+/*! ./ExternalVersionTranslations */
+
+/*! ./FieldImpl */
+
+/*! ./IdentityVersionConverter */
+
+/*! ./Impl/InitializationServiceImpl */
+
+/*! ./Impl/SettingsServiceImpl */
+
+/*! ./Impl/UIServiceImpl */
+
+/*! ./LegacyInternalApiDispatcherHolder */
+
+/*! ./MessageTypeChecks */
+
+/*! ./Param */
+
+/*! ./ServiceImplBase */
+
+/*! ./ServiceRegistry */
+
+/*! ./SettingsImpl */
+
+/*! ./Sheet */
+
+/*! ./SheetImpl */
+
+/*! ./SheetInfoImpl */
+
+/*! ./SingleEventManagerImpl */
+
+/*! ./StackingVersionConverter */
+
+/*! ./TableauError */
+
+/*! ./TableauEvent */
+
+/*! ./TableauSheetEvent */
+
+/*! ./TableauWorksheetEvent */
+
+/*! ./UIImpl */
+
+/*! ./Utils/ErrorHelpers */
+
+/*! ./VersionNumber */
+
+/*! ./VersionTranslations */
+
+/*! ./WorksheetImpl */
+
+/*! ./contract/DataTypeConverter */
+
+/*! ./contract/Enums */
+
+/*! ./contract/Notifications */
+
+/*! ./contract/Parameters */
+
+/*! ./contract/Verbs */
+
+/*! ./impl/DataSourceServiceImpl */
+
+/*! ./impl/FilterServiceImpl */
+
+/*! ./impl/GetDataServiceImpl */
+
+/*! ./impl/NotificationServiceImpl */
+
+/*! ./impl/ParametersServiceImpl */
+
+/*! ./impl/SelectionServiceImpl */
+
+/*! ./impl/ZoneServiceImpl */
+
+/*! ./interface/MessageTypes */
+
+/*! ./messaging/CrossFrameMessenger */
+
+/*! ./messaging/interface/MessageTypes */
+
+/*! ./versioning/VersionConverterFactory */
+
+/*! ./versioning/external/ExternalIdentityVersionConverter */
+
+/*! ./versioning/external/ExternalVersionConverterFactory */
+
+/*! @tableau/api-internal-contract-js */
+
+/*! core-js/es/array/find */
+
+/*! core-js/es/map */
+
+/*! core-js/es/number/is-integer */
+
+/*! core-js/es/number/is-nan */
+
+/*! core-js/es/number/parse-float */
+
+/*! core-js/es/number/parse-int */
+
+/*! core-js/es/object/assign */
+
+/*! core-js/es/object/entries */
+
+/*! core-js/es/object/set-prototype-of */
+
+/*! core-js/es/promise */
+
+/*! exports provided: name, description, repository, version, main, typings, license, scripts, dependencies, devDependencies, peerDependencies, optionalDependencies, resolutions, publishConfig, default */
+
+/*! guid */
+
+/*! no static exports found */
+
+/*!*******************************!*\
+  !*** ../lib/src/ApiShared.js ***!
+  \*******************************/
+
+/*!***********************************!*\
+  !*** ../lib/src/ExtensionsApi.js ***!
+  \***********************************/
+
+/*!************************************!*\
+  !*** ../lib/src/ApiShared/Size.js ***!
+  \************************************/
+
+/*!************************************!*\
+  !*** ../node_modules/guid/guid.js ***!
+  \************************************/
+
+/*!*************************************!*\
+  !*** ../lib/src/ApiShared/Field.js ***!
+  \*************************************/
+
+/*!*************************************!*\
+  !*** ../lib/src/ApiShared/Point.js ***!
+  \*************************************/
+
+/*!*************************************!*\
+  !*** ../lib/src/ApiShared/Sheet.js ***!
+  \*************************************/
+
+/*!*****************************************!*\
+  !*** ../lib/src/ApiShared/Dashboard.js ***!
+  \*****************************************/
+
+/*!*****************************************!*\
+  !*** ../lib/src/ApiShared/Parameter.js ***!
+  \*****************************************/
+
+/*!*****************************************!*\
+  !*** ../lib/src/ApiShared/Worksheet.js ***!
+  \*****************************************/
+
+/*!******************************************!*\
+  !*** ../lib/src/ApiShared/ApiVersion.js ***!
+  \******************************************/
+
+/*!******************************************!*\
+  !*** ../lib/src/ApiShared/DataSource.js ***!
+  \******************************************/
+
+/*!*******************************************!*\
+  !*** ../lib/src/ApiShared/Utils/Param.js ***!
+  \*******************************************/
+
+/*!********************************************!*\
+  !*** ../lib/src/ApiShared/LogicalTable.js ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** ../lib/src/ApiShared/TableSummary.js ***!
+  \********************************************/
+
+/*!********************************************!*\
+  !*** ../lib/src/ApiShared/TableauError.js ***!
+  \********************************************/
+
+/*!*********************************************!*\
+  !*** ../lib/src/ApiShared/VersionNumber.js ***!
+  \*********************************************/
+
+/*!**********************************************!*\
+  !*** ../lib/src/ApiShared/Impl/FieldImpl.js ***!
+  \**********************************************/
+
+/*!**********************************************!*\
+  !*** ../lib/src/ApiShared/Impl/SheetImpl.js ***!
+  \**********************************************/
+
+/*!***********************************************!*\
+  !*** ../lib/src/ApiShared/DashboardObject.js ***!
+  \***********************************************/
+
+/*!***********************************************!*\
+  !*** ../lib/src/ExtensionsApi/Impl/UIImpl.js ***!
+  \***********************************************/
+
+/*!***********************************************!*\
+  !*** ../node_modules/core-js/es/map/index.js ***!
+  \***********************************************/
+
+/*!************************************************!*\
+  !*** ../node_modules/core-js/es/array/find.js ***!
+  \************************************************/
+
+/*!************************************************!*\
+  !*** ../node_modules/core-js/internals/has.js ***!
+  \************************************************/
+
+/*!************************************************!*\
+  !*** ../node_modules/core-js/internals/uid.js ***!
+  \************************************************/
+
+/*!*************************************************!*\
+  !*** ../lib/src/ApiShared/ConnectionSummary.js ***!
+  \*************************************************/
+
+/*!*************************************************!*\
+  !*** ../lib/src/ExtensionsApi/Namespaces/UI.js ***!
+  \*************************************************/
+
+/*!*************************************************!*\
+  !*** ../node_modules/core-js/internals/html.js ***!
+  \*************************************************/
+
+/*!*************************************************!*\
+  !*** ../node_modules/core-js/internals/path.js ***!
+  \*************************************************/
+
+/*!*************************************************!*\
+  !*** ../node_modules/core-js/internals/task.js ***!
+  \*************************************************/
+
+/*!*************************************************!*\
+  !*** ../node_modules/core-js/modules/es.map.js ***!
+  \*************************************************/
+
+/*!*************************************************!*\
+  !*** ../node_modules/webpack/buildin/global.js ***!
+  \*************************************************/
+
+/*!**************************************************!*\
+  !*** ../lib/src/ApiShared/Impl/DashboardImpl.js ***!
+  \**************************************************/
+
+/*!**************************************************!*\
+  !*** ../lib/src/ApiShared/Impl/ParameterImpl.js ***!
+  \**************************************************/
+
+/*!**************************************************!*\
+  !*** ../lib/src/ApiShared/Impl/SheetInfoImpl.js ***!
+  \**************************************************/
+
+/*!**************************************************!*\
+  !*** ../lib/src/ApiShared/Impl/WorksheetImpl.js ***!
+  \**************************************************/
+
+/*!**************************************************!*\
+  !*** ../lib/src/ApiShared/Utils/ErrorHelpers.js ***!
+  \**************************************************/
+
+/*!**************************************************!*\
+  !*** ../node_modules/core-js/internals/fails.js ***!
+  \**************************************************/
+
+/*!***************************************************!*\
+  !*** ../lib/src/ApiShared/Events/TableauEvent.js ***!
+  \***************************************************/
+
+/*!***************************************************!*\
+  !*** ../lib/src/ApiShared/Impl/DataSourceImpl.js ***!
+  \***************************************************/
+
+/*!***************************************************!*\
+  !*** ../lib/src/ApiShared/Models/FilterModels.js ***!
+  \***************************************************/
+
+/*!***************************************************!*\
+  !*** ../lib/src/ApiShared/Utils/EnumConverter.js ***!
+  \***************************************************/
+
+/*!***************************************************!*\
+  !*** ../node_modules/core-js/es/number/is-nan.js ***!
+  \***************************************************/
+
+/*!***************************************************!*\
+  !*** ../node_modules/core-js/es/object/assign.js ***!
+  \***************************************************/
+
+/*!***************************************************!*\
+  !*** ../node_modules/core-js/es/promise/index.js ***!
+  \***************************************************/
+
+/*!***************************************************!*\
+  !*** ../node_modules/core-js/internals/export.js ***!
+  \***************************************************/
+
+/*!***************************************************!*\
+  !*** ../node_modules/core-js/internals/global.js ***!
+  \***************************************************/
+
+/*!***************************************************!*\
+  !*** ../node_modules/core-js/internals/shared.js ***!
+  \***************************************************/
+
+/*!****************************************************!*\
+  !*** ../lib/src/ApiShared/EventListenerManager.js ***!
+  \****************************************************/
+
+/*!****************************************************!*\
+  !*** ../lib/src/ApiShared/Models/GetDataModels.js ***!
+  \****************************************************/
+
+/*!****************************************************!*\
+  !*** ../lib/src/VersionedExternalApiDispatcher.js ***!
+  \****************************************************/
+
+/*!****************************************************!*\
+  !*** ../node_modules/core-js/es/object/entries.js ***!
+  \****************************************************/
+
+/*!****************************************************!*\
+  !*** ../node_modules/core-js/internals/classof.js ***!
+  \****************************************************/
+
+/*!****************************************************!*\
+  !*** ../node_modules/core-js/internals/is-pure.js ***!
+  \****************************************************/
+
+/*!****************************************************!*\
+  !*** ../node_modules/core-js/internals/iterate.js ***!
+  \****************************************************/
+
+/*!****************************************************!*\
+  !*** ../node_modules/core-js/internals/perform.js ***!
+  \****************************************************/
+
+/*!*****************************************************!*\
+  !*** ../lib/src/ExtensionsApi/Impl/SettingsImpl.js ***!
+  \*****************************************************/
+
+/*!*****************************************************!*\
+  !*** ../node_modules/core-js/internals/freezing.js ***!
+  \*****************************************************/
+
+/*!*****************************************************!*\
+  !*** ../node_modules/core-js/internals/is-array.js ***!
+  \*****************************************************/
+
+/*!*****************************************************!*\
+  !*** ../node_modules/core-js/internals/own-keys.js ***!
+  \*****************************************************/
+
+/*!*****************************************************!*\
+  !*** ../node_modules/core-js/internals/redefine.js ***!
+  \*****************************************************/
+
+/*!*****************************************************!*\
+  !*** ../node_modules/core-js/modules/es.promise.js ***!
+  \*****************************************************/
+
+/*!******************************************************!*\
+  !*** ../lib/src/ApiShared/Models/SelectionModels.js ***!
+  \******************************************************/
+
+/*!******************************************************!*\
+  !*** ../lib/src/ApiShared/Utils/DataValueFactory.js ***!
+  \******************************************************/
+
+/*!******************************************************!*\
+  !*** ../node_modules/core-js/es/number/parse-int.js ***!
+  \******************************************************/
+
+/*!******************************************************!*\
+  !*** ../node_modules/core-js/internals/an-object.js ***!
+  \******************************************************/
+
+/*!******************************************************!*\
+  !*** ../node_modules/core-js/internals/is-forced.js ***!
+  \******************************************************/
+
+/*!******************************************************!*\
+  !*** ../node_modules/core-js/internals/is-object.js ***!
+  \******************************************************/
+
+/*!******************************************************!*\
+  !*** ../node_modules/core-js/internals/iterators.js ***!
+  \******************************************************/
+
+/*!******************************************************!*\
+  !*** ../node_modules/core-js/internals/microtask.js ***!
+  \******************************************************/
+
+/*!******************************************************!*\
+  !*** ../node_modules/core-js/internals/to-length.js ***!
+  \******************************************************/
+
+/*!******************************************************!*\
+  !*** ../node_modules/core-js/internals/to-object.js ***!
+  \******************************************************/
+
+/*!*******************************************************!*\
+  !*** ../lib/src/ApiShared/Services/GetDataService.js ***!
+  \*******************************************************/
+
+/*!*******************************************************!*\
+  !*** ../lib/src/ExtensionsApi/Impl/ExtensionsImpl.js ***!
+  \*******************************************************/
+
+/*!*******************************************************!*\
+  !*** ../lib/src/ExtensionsApi/Namespaces/Settings.js ***!
+  \*******************************************************/
+
+/*!*******************************************************!*\
+  !*** ../node_modules/core-js/es/number/is-integer.js ***!
+  \*******************************************************/
+
+/*!*******************************************************!*\
+  !*** ../node_modules/core-js/internals/a-function.js ***!
+  \*******************************************************/
+
+/*!*******************************************************!*\
+  !*** ../node_modules/core-js/internals/collection.js ***!
+  \*******************************************************/
+
+/*!*******************************************************!*\
+  !*** ../node_modules/core-js/internals/is-integer.js ***!
+  \*******************************************************/
+
+/*!*******************************************************!*\
+  !*** ../node_modules/core-js/internals/set-global.js ***!
+  \*******************************************************/
+
+/*!*******************************************************!*\
+  !*** ../node_modules/core-js/internals/shared-key.js ***!
+  \*******************************************************/
+
+/*!*******************************************************!*\
+  !*** ../node_modules/core-js/internals/to-integer.js ***!
+  \*******************************************************/
+
+/*!********************************************************!*\
+  !*** ../lib/src/ApiShared/Events/TableauSheetEvent.js ***!
+  \********************************************************/
+
+/*!********************************************************!*\
+  !*** ../lib/src/ApiShared/Services/ServiceRegistry.js ***!
+  \********************************************************/
+
+/*!********************************************************!*\
+  !*** ../node_modules/core-js/es/number/parse-float.js ***!
+  \********************************************************/
+
+/*!********************************************************!*\
+  !*** ../node_modules/core-js/internals/an-instance.js ***!
+  \********************************************************/
+
+/*!********************************************************!*\
+  !*** ../node_modules/core-js/internals/classof-raw.js ***!
+  \********************************************************/
+
+/*!********************************************************!*\
+  !*** ../node_modules/core-js/internals/descriptors.js ***!
+  \********************************************************/
+
+/*!********************************************************!*\
+  !*** ../node_modules/core-js/internals/hidden-keys.js ***!
+  \********************************************************/
+
+/*!********************************************************!*\
+  !*** ../node_modules/core-js/internals/object-keys.js ***!
+  \********************************************************/
+
+/*!********************************************************!*\
+  !*** ../node_modules/core-js/internals/set-species.js ***!
+  \********************************************************/
+
+/*!********************************************************!*\
+  !*** ../node_modules/core-js/internals/string-trim.js ***!
+  \********************************************************/
+
+/*!********************************************************!*\
+  !*** ../node_modules/core-js/internals/whitespaces.js ***!
+  \********************************************************/
+
+/*!********************************************************!*\
+  !*** ../node_modules/core-js/modules/es.array.find.js ***!
+  \********************************************************/
+
+/*!*********************************************************!*\
+  !*** ../lib/src/ApiShared/Events/FilterChangedEvent.js ***!
+  \*********************************************************/
+
+/*!*********************************************************!*\
+  !*** ../lib/src/ApiShared/Events/MarksSelectedEvent.js ***!
+  \*********************************************************/
+
+/*!*********************************************************!*\
+  !*** ../lib/src/ExtensionsApi/Namespaces/Extensions.js ***!
+  \*********************************************************/
+
+/*!*********************************************************!*\
+  !*** ../lib/src/ExternalContract/Namespaces/Tableau.js ***!
+  \*********************************************************/
+
+/*!*********************************************************!*\
+  !*** ../node_modules/core-js/internals/entry-unbind.js ***!
+  \*********************************************************/
+
+/*!*********************************************************!*\
+  !*** ../node_modules/core-js/internals/get-built-in.js ***!
+  \*********************************************************/
+
+/*!*********************************************************!*\
+  !*** ../node_modules/core-js/internals/redefine-all.js ***!
+  \*********************************************************/
+
+/*!*********************************************************!*\
+  !*** ../node_modules/core-js/internals/shared-store.js ***!
+  \*********************************************************/
+
+/*!*********************************************************!*\
+  !*** ../node_modules/core-js/internals/to-primitive.js ***!
+  \*********************************************************/
+
+/*!**********************************************************!*\
+  !*** ../lib/src/ExtensionsApi/Namespaces/Environment.js ***!
+  \**********************************************************/
+
+/*!**********************************************************!*\
+  !*** ../node_modules/core-js/internals/dom-iterables.js ***!
+  \**********************************************************/
+
+/*!**********************************************************!*\
+  !*** ../node_modules/core-js/internals/engine-is-ios.js ***!
+  \**********************************************************/
+
+/*!**********************************************************!*\
+  !*** ../node_modules/core-js/internals/enum-bug-keys.js ***!
+  \**********************************************************/
+
+/*!**********************************************************!*\
+  !*** ../node_modules/core-js/internals/native-symbol.js ***!
+  \**********************************************************/
+
+/*!**********************************************************!*\
+  !*** ../node_modules/core-js/internals/object-assign.js ***!
+  \**********************************************************/
+
+/*!**********************************************************!*\
+  !*** ../node_modules/core-js/internals/object-create.js ***!
+  \**********************************************************/
+
+/*!***********************************************************!*\
+  !*** ../lib/src/ApiShared/Impl/SingleEventManagerImpl.js ***!
+  \***********************************************************/
+
+/*!***********************************************************!*\
+  !*** ../node_modules/core-js/internals/array-includes.js ***!
+  \***********************************************************/
+
+/*!***********************************************************!*\
+  !*** ../node_modules/core-js/internals/ie8-dom-define.js ***!
+  \***********************************************************/
+
+/*!***********************************************************!*\
+  !*** ../node_modules/core-js/internals/indexed-object.js ***!
+  \***********************************************************/
+
+/*!***********************************************************!*\
+  !*** ../node_modules/core-js/internals/inspect-source.js ***!
+  \***********************************************************/
+
+/*!***********************************************************!*\
+  !*** ../node_modules/core-js/internals/internal-state.js ***!
+  \***********************************************************/
+
+/*!***********************************************************!*\
+  !*** ../node_modules/core-js/internals/iterators-core.js ***!
+  \***********************************************************/
+
+/*!***********************************************************!*\
+  !*** ../node_modules/core-js/modules/es.number.is-nan.js ***!
+  \***********************************************************/
+
+/*!***********************************************************!*\
+  !*** ../node_modules/core-js/modules/es.object.assign.js ***!
+  \***********************************************************/
+
+/*!************************************************************!*\
+  !*** ../lib/src/ApiShared/Events/ParameterChangedEvent.js ***!
+  \************************************************************/
+
+/*!************************************************************!*\
+  !*** ../lib/src/ApiShared/Events/TableauWorksheetEvent.js ***!
+  \************************************************************/
+
+/*!************************************************************!*\
+  !*** ../node_modules/core-js/internals/array-iteration.js ***!
+  \************************************************************/
+
+/*!************************************************************!*\
+  !*** ../node_modules/core-js/internals/define-iterator.js ***!
+  \************************************************************/
+
+/*!************************************************************!*\
+  !*** ../node_modules/core-js/internals/native-weak-map.js ***!
+  \************************************************************/
+
+/*!************************************************************!*\
+  !*** ../node_modules/core-js/internals/object-to-array.js ***!
+  \************************************************************/
+
+/*!************************************************************!*\
+  !*** ../node_modules/core-js/internals/promise-resolve.js ***!
+  \************************************************************/
+
+/*!************************************************************!*\
+  !*** ../node_modules/core-js/modules/es.array.iterator.js ***!
+  \************************************************************/
+
+/*!************************************************************!*\
+  !*** ../node_modules/core-js/modules/es.object.entries.js ***!
+  \************************************************************/
+
+/*!*************************************************************!*\
+  !*** ../lib/src/ApiShared/Services/impl/ServiceImplBase.js ***!
+  \*************************************************************/
+
+/*!*************************************************************!*\
+  !*** ../lib/src/ApiShared/Services/impl/ZoneServiceImpl.js ***!
+  \*************************************************************/
+
+/*!*************************************************************!*\
+  !*** ../node_modules/core-js/es/object/set-prototype-of.js ***!
+  \*************************************************************/
+
+/*!*************************************************************!*\
+  !*** ../node_modules/core-js/internals/number-parse-int.js ***!
+  \*************************************************************/
+
+/*!*************************************************************!*\
+  !*** ../node_modules/core-js/internals/object-to-string.js ***!
+  \*************************************************************/
+
+/*!*************************************************************!*\
+  !*** ../node_modules/core-js/internals/string-multibyte.js ***!
+  \*************************************************************/
+
+/*!*************************************************************!*\
+  !*** ../node_modules/core-js/modules/es.promise.finally.js ***!
+  \*************************************************************/
+
+/*!*************************************************************!*\
+  !*** ../node_modules/core-js/modules/es.string.iterator.js ***!
+  \*************************************************************/
+
+/*!**************************************************************!*\
+  !*** ../lib/src/ApiShared/CrossFrame/CrossFrameBootstrap.js ***!
+  \**************************************************************/
+
+/*!**************************************************************!*\
+  !*** ../node_modules/core-js/internals/collection-strong.js ***!
+  \**************************************************************/
+
+/*!**************************************************************!*\
+  !*** ../node_modules/core-js/internals/engine-user-agent.js ***!
+  \**************************************************************/
+
+/*!**************************************************************!*\
+  !*** ../node_modules/core-js/internals/engine-v8-version.js ***!
+  \**************************************************************/
+
+/*!**************************************************************!*\
+  !*** ../node_modules/core-js/internals/internal-metadata.js ***!
+  \**************************************************************/
+
+/*!**************************************************************!*\
+  !*** ../node_modules/core-js/internals/set-to-string-tag.js ***!
+  \**************************************************************/
+
+/*!**************************************************************!*\
+  !*** ../node_modules/core-js/internals/to-absolute-index.js ***!
+  \**************************************************************/
+
+/*!**************************************************************!*\
+  !*** ../node_modules/core-js/internals/to-indexed-object.js ***!
+  \**************************************************************/
+
+/*!**************************************************************!*\
+  !*** ../node_modules/core-js/internals/use-symbol-as-uid.js ***!
+  \**************************************************************/
+
+/*!**************************************************************!*\
+  !*** ../node_modules/core-js/internals/well-known-symbol.js ***!
+  \**************************************************************/
+
+/*!**************************************************************!*\
+  !*** ../node_modules/core-js/modules/es.number.parse-int.js ***!
+  \**************************************************************/
+
+/*!**************************************************************!*\
+  !*** ../node_modules/core-js/modules/es.object.to-string.js ***!
+  \**************************************************************/
+
+/*!***************************************************************!*\
+  !*** ../lib/src/ApiShared/CrossFrame/CrossFrameDispatcher.js ***!
+  \***************************************************************/
+
+/*!***************************************************************!*\
+  !*** ../lib/src/ApiShared/Services/impl/FilterServiceImpl.js ***!
+  \***************************************************************/
+
+/*!***************************************************************!*\
+  !*** ../lib/src/ExtensionsApi/Namespaces/DashboardContent.js ***!
+  \***************************************************************/
+
+/*!***************************************************************!*\
+  !*** ../lib/src/ExtensionsApi/Services/Impl/UIServiceImpl.js ***!
+  \***************************************************************/
+
+/*!***************************************************************!*\
+  !*** ../node_modules/core-js/internals/add-to-unscopables.js ***!
+  \***************************************************************/
+
+/*!***************************************************************!*\
+  !*** ../node_modules/core-js/internals/host-report-errors.js ***!
+  \***************************************************************/
+
+/*!***************************************************************!*\
+  !*** ../node_modules/core-js/internals/number-parse-float.js ***!
+  \***************************************************************/
+
+/*!***************************************************************!*\
+  !*** ../node_modules/core-js/modules/es.number.is-integer.js ***!
+  \***************************************************************/
+
+/*!****************************************************************!*\
+  !*** ../lib/src/ApiShared/Services/impl/GetDataServiceImpl.js ***!
+  \****************************************************************/
+
+/*!****************************************************************!*\
+  !*** ../node_modules/core-js/internals/get-iterator-method.js ***!
+  \****************************************************************/
+
+/*!****************************************************************!*\
+  !*** ../node_modules/core-js/internals/inherit-if-required.js ***!
+  \****************************************************************/
+
+/*!****************************************************************!*\
+  !*** ../node_modules/core-js/internals/species-constructor.js ***!
+  \****************************************************************/
+
+/*!****************************************************************!*\
+  !*** ../node_modules/core-js/modules/es.number.parse-float.js ***!
+  \****************************************************************/
+
+/*!*****************************************************************!*\
+  !*** ../node_modules/core-js/internals/a-possible-prototype.js ***!
+  \*****************************************************************/
+
+/*!*****************************************************************!*\
+  !*** ../node_modules/core-js/internals/array-species-create.js ***!
+  \*****************************************************************/
+
+/*!*****************************************************************!*\
+  !*** ../node_modules/core-js/internals/object-keys-internal.js ***!
+  \*****************************************************************/
+
+/*!*****************************************************************!*\
+  !*** ../node_modules/core-js/modules/es.promise.all-settled.js ***!
+  \*****************************************************************/
+
+/*!******************************************************************!*\
+  !*** ../lib/src/ApiShared/Services/RegisterAllSharedServices.js ***!
+  \******************************************************************/
+
+/*!******************************************************************!*\
+  !*** ../lib/src/ApiShared/Services/impl/SelectionServiceImpl.js ***!
+  \******************************************************************/
+
+/*!******************************************************************!*\
+  !*** ../node_modules/core-js/internals/function-bind-context.js ***!
+  \******************************************************************/
+
+/*!******************************************************************!*\
+  !*** ../node_modules/core-js/internals/to-string-tag-support.js ***!
+  \******************************************************************/
+
+/*!*******************************************************************!*\
+  !*** ../lib/src/ApiShared/Services/impl/DataSourceServiceImpl.js ***!
+  \*******************************************************************/
+
+/*!*******************************************************************!*\
+  !*** ../lib/src/ApiShared/Services/impl/ParametersServiceImpl.js ***!
+  \*******************************************************************/
+
+/*!*******************************************************************!*\
+  !*** ../node_modules/core-js/internals/new-promise-capability.js ***!
+  \*******************************************************************/
+
+/*!*******************************************************************!*\
+  !*** ../node_modules/core-js/internals/object-define-property.js ***!
+  \*******************************************************************/
+
+/*!********************************************************************!*\
+  !*** ../node_modules/core-js/internals/document-create-element.js ***!
+  \********************************************************************/
+
+/*!********************************************************************!*\
+  !*** ../node_modules/core-js/internals/object-get-prototype-of.js ***!
+  \********************************************************************/
+
+/*!********************************************************************!*\
+  !*** ../node_modules/core-js/internals/object-set-prototype-of.js ***!
+  \********************************************************************/
+
+/*!*********************************************************************!*\
+  !*** ../lib/src/ApiShared/Services/impl/NotificationServiceImpl.js ***!
+  \*********************************************************************/
+
+/*!*********************************************************************!*\
+  !*** ../lib/src/ExtensionsApi/Services/Impl/SettingsServiceImpl.js ***!
+  \*********************************************************************/
+
+/*!*********************************************************************!*\
+  !*** ../node_modules/core-js/internals/correct-prototype-getter.js ***!
+  \*********************************************************************/
+
+/*!*********************************************************************!*\
+  !*** ../node_modules/core-js/internals/is-array-iterator-method.js ***!
+  \*********************************************************************/
+
+/*!*********************************************************************!*\
+  !*** ../node_modules/core-js/internals/object-define-properties.js ***!
+  \*********************************************************************/
+
+/*!*********************************************************************!*\
+  !*** ../node_modules/core-js/internals/require-object-coercible.js ***!
+  \*********************************************************************/
+
+/*!*********************************************************************!*\
+  !*** ../node_modules/core-js/modules/es.object.set-prototype-of.js ***!
+  \*********************************************************************/
+
+/*!***********************************************************************!*\
+  !*** ../node_modules/core-js/internals/create-property-descriptor.js ***!
+  \***********************************************************************/
+
+/*!***********************************************************************!*\
+  !*** ../node_modules/core-js/internals/native-promise-constructor.js ***!
+  \***********************************************************************/
+
+/*!***********************************************************************!*\
+  !*** ../node_modules/core-js/modules/web.dom-collections.iterator.js ***!
+  \***********************************************************************/
+
+/*!************************************************************************!*\
+  !*** ../node_modules/core-js/internals/array-method-uses-to-length.js ***!
+  \************************************************************************/
+
+/*!************************************************************************!*\
+  !*** ../node_modules/core-js/internals/copy-constructor-properties.js ***!
+  \************************************************************************/
+
+/*!************************************************************************!*\
+  !*** ../node_modules/core-js/internals/create-iterator-constructor.js ***!
+  \************************************************************************/
+
+/*!**************************************************************************!*\
+  !*** ../lib/src/ExtensionsApi/Impl/LegacyInternalApiDispatcherHolder.js ***!
+  \**************************************************************************/
+
+/*!**************************************************************************!*\
+  !*** ../lib/src/ExtensionsApi/Services/RegisterAllExtensionsServices.js ***!
+  \**************************************************************************/
+
+/*!**************************************************************************!*\
+  !*** ../node_modules/@tableau/api-internal-contract-js/lib/package.json ***!
+  \**************************************************************************/
+
+/*!**************************************************************************!*\
+  !*** ../node_modules/core-js/internals/object-get-own-property-names.js ***!
+  \**************************************************************************/
+
+/*!**************************************************************************!*\
+  !*** ../node_modules/core-js/internals/object-property-is-enumerable.js ***!
+  \**************************************************************************/
+
+/*!***************************************************************************!*\
+  !*** ../lib/src/ApiShared/EnumMappings/ExternalToInternalEnumMappings.js ***!
+  \***************************************************************************/
+
+/*!***************************************************************************!*\
+  !*** ../lib/src/ApiShared/EnumMappings/InternalToExternalEnumMappings.js ***!
+  \***************************************************************************/
+
+/*!***************************************************************************!*\
+  !*** ../lib/src/ExtensionsApi/Services/Impl/InitializationServiceImpl.js ***!
+  \***************************************************************************/
+
+/*!***************************************************************************!*\
+  !*** ../node_modules/core-js/internals/check-correctness-of-iteration.js ***!
+  \***************************************************************************/
+
+/*!***************************************************************************!*\
+  !*** ../node_modules/core-js/internals/create-non-enumerable-property.js ***!
+  \***************************************************************************/
+
+/*!****************************************************************************!*\
+  !*** ../node_modules/core-js/internals/object-get-own-property-symbols.js ***!
+  \****************************************************************************/
+
+/*!*****************************************************************************!*\
+  !*** ../node_modules/core-js/internals/call-with-safe-iteration-closing.js ***!
+  \*****************************************************************************/
+
+/*!*******************************************************************************!*\
+  !*** ../node_modules/core-js/internals/object-get-own-property-descriptor.js ***!
+  \*******************************************************************************/
+
+/*!***********************************************************************************!*\
+  !*** ../node_modules/@tableau/api-internal-contract-js/lib/src/contract/Enums.js ***!
+  \***********************************************************************************/
+
+/*!***********************************************************************************!*\
+  !*** ../node_modules/@tableau/api-internal-contract-js/lib/src/contract/Verbs.js ***!
+  \***********************************************************************************/
+
+/*!****************************************************************************************!*\
+  !*** ../node_modules/@tableau/api-internal-contract-js/lib/src/contract/Parameters.js ***!
+  \****************************************************************************************/
+
+/*!******************************************************************************************!*\
+  !*** ../node_modules/@tableau/api-internal-contract-js/lib/src/JsApiInternalContract.js ***!
+  \******************************************************************************************/
+
+/*!*******************************************************************************************!*\
+  !*** ../node_modules/@tableau/api-internal-contract-js/lib/src/contract/Notifications.js ***!
+  \*******************************************************************************************/
+
+/*!***********************************************************************************************!*\
+  !*** ../node_modules/@tableau/api-internal-contract-js/lib/src/contract/DataTypeConverter.js ***!
+  \***********************************************************************************************/
+
+/*!************************************************************************************************!*\
+  !*** ../node_modules/@tableau/api-internal-contract-js/lib/src/messaging/MessageTypeChecks.js ***!
+  \************************************************************************************************/
+
+/*!**************************************************************************************************!*\
+  !*** ../node_modules/@tableau/api-internal-contract-js/lib/src/messaging/CrossFrameMessenger.js ***!
+  \**************************************************************************************************/
+
+/*!***************************************************************************************************!*\
+  !*** ../node_modules/@tableau/api-internal-contract-js/lib/src/versioning/VersionTranslations.js ***!
+  \***************************************************************************************************/
+
+/*!*****************************************************************************************************!*\
+  !*** ../node_modules/@tableau/api-internal-contract-js/lib/src/messaging/interface/MessageTypes.js ***!
+  \*****************************************************************************************************/
+
+/*!*******************************************************************************************************!*\
+  !*** ../node_modules/@tableau/api-internal-contract-js/lib/src/versioning/VersionConverterFactory.js ***!
+  \*******************************************************************************************************/
+
+/*!********************************************************************************************************!*\
+  !*** ../node_modules/@tableau/api-internal-contract-js/lib/src/messaging/CrossFramePreparedMessage.js ***!
+  \********************************************************************************************************/
+
+/*!********************************************************************************************************!*\
+  !*** ../node_modules/@tableau/api-internal-contract-js/lib/src/versioning/IdentityVersionConverter.js ***!
+  \********************************************************************************************************/
+
+/*!********************************************************************************************************!*\
+  !*** ../node_modules/@tableau/api-internal-contract-js/lib/src/versioning/StackingVersionConverter.js ***!
+  \********************************************************************************************************/
+
+/*!********************************************************************************************************************!*\
+  !*** ../node_modules/@tableau/api-internal-contract-js/lib/src/versioning/external/ExternalVersionTranslations.js ***!
+  \********************************************************************************************************************/
+
+/*!************************************************************************************************************************!*\
+  !*** ../node_modules/@tableau/api-internal-contract-js/lib/src/versioning/external/ExternalVersionConverterFactory.js ***!
+  \************************************************************************************************************************/
+
+/*!*************************************************************************************************************************!*\
+  !*** ../node_modules/@tableau/api-internal-contract-js/lib/src/versioning/external/ExternalIdentityVersionConverter.js ***!
+  \*************************************************************************************************************************/
+
+/*!*************************************************************************************************************************!*\
+  !*** ../node_modules/@tableau/api-internal-contract-js/lib/src/versioning/external/ExternalStackingVersionConverter.js ***!
+  \*************************************************************************************************************************/

@@ -1,0 +1,9 @@
+{
+    "port": 8080,
+
+    "extensions": {
+        "your-extension-id": {
+            "path": "path/to/extension"
+        }
+    }
+}

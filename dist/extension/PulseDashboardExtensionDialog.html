@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Settings Sample</title>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script> 
+
+    <!-- Extensions Library (this will be hosted on a CDN eventually) -->
+    <!-- <script src="https://online.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"></script> --> 
+    <script type="module" src="../lib/tableau.extensions.1.latest.js" defer></script>
+    <!-- Our extension's code -->
+    <script type="module" src="./PulseDashboardExtensionDialog.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <h4>Pulse Embed Extension</h4>
+      <p>
+        This Extension allows embedding of Pulse metrics in the dashboard.
+      </p>
+      <hr />
+
+      <h5>Connection to Tableau: </h5>
+      <div class="inputDiv">
+        <label for="tableauUrl">Tableau Pod</label>
+        <select id="tableauUrl">
+          <option value="prod-apsoutheast-a">Asia Pacific - Australia - (prod-apsoutheast-a)</option>
+          <option value="prod-apnortheast-a">Asia Pacific - Japan - (prod-apnortheast-a)</option>
+          <option value="prod-ca-a">Canada - Quebec - (prod-ca-a)</option>
+          <option value="dub01">Europe - Ireland - (DUB01)</option>
+          <option value="ew1a">Europe - Ireland - (EW1A)</option>
+          <option value="prod-uk-a">Europe - UK - (prod-uk-a)</option>
+          <option value="useast-1">United States - East - (useast-1)</option>
+          <option value="prod-useast-a">United States - East - (prod-useast-a)</option>
+          <option value="prod-useast-b">United States - East - (prod-useast-b)</option>
+          <option value="10ax">United States - West - (10AX)</option>
+          <option value="10ay">United States - West - (10AY)</option>
+          <option value="10az">United States - West - (10AZ)</option>
+          <option value="uw2b">United States - West - (UW2B)</option>
+        </select>
+      </div>
+      
+      
+        <div class="inputDiv">
+          <label for="siteName">Site Name</label>
+          <input type="text" id="siteName" placeholder="Enter Site Name">
+        </div>
+        <div class="inputDiv">
+          <label for="userName">User Name</label>
+          <input type="text" id="userName" placeholder="Enter User Name">
+        </div>
+        <div class="inputDiv">
+          <label for="caClientId">Client ID</label>
+          <input type="text" id="caClientId" placeholder="Enter Client ID">
+        </div>
+        <div class="inputDiv">
+          <label for="caSecretId">Secret ID</label>
+          <input type="text" id="caSecretId" placeholder="Enter Secret ID">
+        </div>
+        <div class="inputDiv">
+          <label for="caSecretValue">Secret Value</label>
+          <input type="text" id="caSecretValue" placeholder="Enter Secret Value">
+        </div>
+
+      
+
+      <button id="closeButton">Close and Save</button>
+    </div>
+  </body>
+</html>
